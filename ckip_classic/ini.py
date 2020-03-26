@@ -11,7 +11,7 @@ import sys as _sys
 import tempfile as _tempfile
 import warnings as _warnings
 
-import ckipnlp as _about
+import ckip_classic as _about
 
 def create_ws_lex(*lex_list
 ):
@@ -86,7 +86,7 @@ def create_ws_ini(*, # pylint: disable=too-many-statements
     if data2_dir is None:
         data2_dir = _os.getenv('CKIPWS_DATA2')
         if not data2_dir:
-            data2_dir = _os.path.join(_sys.prefix, 'share', 'ckipnlp', 'Data2')
+            data2_dir = _os.path.join(_sys.prefix, 'share', 'ckip_classic', 'Data2')
         if not _os.path.isdir(data2_dir):
             _warnings.warn('Invalid data2_dir (%s)' % data2_dir)
             data2_dir = 'Data2'
@@ -401,7 +401,7 @@ def create_parser_ini(*, # pylint: disable=too-many-statements
     if rule_dir is None:
         rule_dir = _os.getenv('CKIPPARSER_RULE')
         if not rule_dir:
-            rule_dir = _os.path.join(_sys.prefix, 'share', 'ckipnlp', 'Rule')
+            rule_dir = _os.path.join(_sys.prefix, 'share', 'ckip_classic', 'Rule')
         if not _os.path.isdir(rule_dir):
             _warnings.warn('Invalid rule_dir (%s)' % rule_dir)
             rule_dir = 'Rule'
@@ -409,7 +409,7 @@ def create_parser_ini(*, # pylint: disable=too-many-statements
     if rdb_dir is None:
         rdb_dir = _os.getenv('CKIPPARSER_RDB')
         if not rdb_dir:
-            rdb_dir = _os.path.join(_sys.prefix, 'share', 'ckipnlp', 'RDB')
+            rdb_dir = _os.path.join(_sys.prefix, 'share', 'ckip_classic', 'RDB')
         if not _os.path.isdir(rdb_dir):
             _warnings.warn('Invalid rdb_dir (%s)' % rdb_dir)
             rdb_dir = 'RDB'
