@@ -30,7 +30,7 @@ from setuptools.command.install import install
 from setuptools.command.develop import develop
 from Cython.Build import cythonize
 
-import ckipnlp as about
+import ckip_classic as about
 
 ################################################################################
 
@@ -40,7 +40,7 @@ def main():
         readme = fin.read()
 
     setup(
-        name=about.__name__,
+        name=about.__pkgname__,
         version=about.__version__,
         author=about.__author_name__,
         author_email=about.__author_email__,
@@ -68,18 +68,15 @@ def main():
             'Natural Language :: Chinese (Traditional)',
         ],
         python_requires='>=3.5',
-        packages=find_namespace_packages(include=['ckipnlp', 'ckipnlp.*',]),
-        install_requires=[
-            'treelib>=1.5.5',
-        ],
+        packages=find_namespace_packages(include=['ckip_classic', 'ckip_classic.*',]),
         ext_modules=cythonize(
             [
-                Extension('ckipnlp._core.ws',
+                Extension('ckip_classic._core.ws',
                     sources=['src/ws/ckipws.pyx'],
                     libraries=['WordSeg'],
                     language='c++',
                 ),
-                Extension('ckipnlp._core.parser',
+                Extension('ckip_classic._core.parser',
                     sources=['src/parser/ckipparser.pyx'],
                     libraries=['CKIPCoreNLP', 'CKIPParser', 'CKIPWS', 'CKIPSRL'],
                     language='c++',
@@ -194,12 +191,12 @@ class CommandMixin(object):
             print('- Enable CKIPWS support')
             if self.ws_lib_dir:
                 print('- Use CKIPWS library from (%s)' % self.ws_lib_dir)
-                i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckipnlp._core.ws'), None)
+                i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckip_classic._core.ws'), None)
                 self.distribution.ext_modules[i].library_dirs.append(self.ws_lib_dir)
                 self.distribution.ext_modules[i].runtime_library_dirs.append(self.ws_lib_dir)
         else:
             print('- Disable CKIPWS support')
-            i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckipnlp._core.ws'), None)
+            i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckip_classic._core.ws'), None)
             if i is not None: del self.distribution.ext_modules[i]
 
         # CKIPParser
@@ -207,26 +204,26 @@ class CommandMixin(object):
             print('- Enable CKIPParser support')
             if self.parser_lib_dir:
                 print('- Use CKIPParser library from (%s)' % self.parser_lib_dir)
-                i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckipnlp._core.parser'), None)
+                i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckip_classic._core.parser'), None)
                 self.distribution.ext_modules[i].library_dirs.append(self.parser_lib_dir)
                 self.distribution.ext_modules[i].runtime_library_dirs.append(self.parser_lib_dir)
         else:
             print('- Disable CKIPParser support')
-            i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckipnlp._core.parser'), None)
+            i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckip_classic._core.parser'), None)
             if i is not None: del self.distribution.ext_modules[i]
 
         # Data
         if self.data2_dir:
             print('- Use "Data2" from (%s)' % self.data2_dir)
-            self.data_files('share/ckipnlp/Data2/', self.data2_dir)
+            self.data_files('share/ckip_classic/Data2/', self.data2_dir)
 
         if self.rule_dir:
             print('- Use "Rule" from (%s)' % self.rule_dir)
-            self.data_files('share/ckipnlp/Rule/', self.rule_dir)
+            self.data_files('share/ckip_classic/Rule/', self.rule_dir)
 
         if self.rdb_dir:
             print('- Use "RDB" from (%s)' % self.rdb_dir)
-            self.data_files('share/ckipnlp/RDB/', self.rdb_dir)
+            self.data_files('share/ckip_classic/RDB/', self.rdb_dir)
 
         # Python packages
         # self.distribution.packages = list(self.distribution.package_dir.keys())

@@ -1,5 +1,5 @@
-CKIP CoreNLP Wrappers
-=====================
+CKIP Classic NLP Tools
+======================
 
 .. toctree::
    :caption: Overview
@@ -9,11 +9,10 @@ CKIP CoreNLP Wrappers
 .. toctree::
    :caption: Contents
 
-   _api/ckipnlp
+   _api/ckip_classic
 
 .. toctree::
    :caption: Appendix
 
-   src/todo
    genindex
    py-modindex

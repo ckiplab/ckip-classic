@@ -15,7 +15,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath('..'))
 os.environ['_SPHINX'] = "1"
-import ckipnlp as __about
+import ckip_classic as __about
 
 # -- Project information -----------------------------------------------------
 
@@ -40,7 +40,6 @@ extensions = [
     'sphinx.ext.autodoc',
     # 'sphinx.ext.autodoc.typehints',
     'sphinx.ext.napoleon',
-    'sphinx.ext.todo',
     'sphinx.ext.viewcode',
     'sphinx_rtd_theme',
 ]
@@ -76,13 +75,12 @@ autodoc_member_order = 'bysource'
 napoleon_google_docstring = False
 napoleon_numpy_docstring = True
 napoleon_use_rtype = False
-todo_include_todos = True
 
 # -- Events ------------------------------------------------------------------
 
 def run_apidoc(_):
     from sphinx.ext.apidoc import main
-    main(['-feTM', '-t', './_templates', '-o', '_api', '../ckipnlp'])
+    main(['-feTM', '-t', './_templates', '-o', '_api', '../ckip_classic'])
 
 def setup(app):
     app.connect('builder-inited', run_apidoc)

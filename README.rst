@@ -1,73 +1,75 @@
 Introduction
 ============
 
+.. attention::
+   Please use `CKIPNLP <https://pypi.org/project/ckipnlp/>`_ for structured data types and pipeline drivers.
+
 Git
 ---
 
-https://github.com/ckiplab/ckipnlp
+https://github.com/ckiplab/ckip-classic
 
 |GitHub Version| |GitHub Release| |GitHub Issues|
 
-.. |GitHub Version| image:: https://img.shields.io/github/v/release/ckiplab/ckipnlp.svg?maxAge=3600
-   :target: https://github.com/ckiplab/ckipnlp/releases
+.. |GitHub Version| image:: https://img.shields.io/github/v/release/ckiplab/ckip-classic.svg?maxAge=3600
+   :target: https://github.com/ckiplab/ckip-classic/releases
 
-.. |GitHub License| image:: https://img.shields.io/github/license/ckiplab/ckipnlp.svg?maxAge=3600
-   :target: https://github.com/ckiplab/ckipnlp/blob/master/LICENSE
+.. |GitHub License| image:: https://img.shields.io/github/license/ckiplab/ckip-classic.svg?maxAge=3600
+   :target: https://github.com/ckiplab/ckip-classic/blob/master/LICENSE
 
-.. |GitHub Release| image:: https://img.shields.io/github/release-date/ckiplab/ckipnlp.svg?maxAge=3600
+.. |GitHub Release| image:: https://img.shields.io/github/release-date/ckiplab/ckip-classic.svg?maxAge=3600
 
-.. |GitHub Downloads| image:: https://img.shields.io/github/downloads/ckiplab/ckipnlp/total.svg?maxAge=3600
-   :target: https://github.com/ckiplab/ckipnlp/releases/latest
+.. |GitHub Downloads| image:: https://img.shields.io/github/downloads/ckiplab/ckip-classic/total.svg?maxAge=3600
+   :target: https://github.com/ckiplab/ckip-classic/releases/latest
 
-.. |GitHub Issues| image:: https://img.shields.io/github/issues/ckiplab/ckipnlp.svg?maxAge=3600
-   :target: https://github.com/ckiplab/ckipnlp/issues
+.. |GitHub Issues| image:: https://img.shields.io/github/issues/ckiplab/ckip-classic.svg?maxAge=3600
+   :target: https://github.com/ckiplab/ckip-classic/issues
 
-.. |GitHub Forks| image:: https://img.shields.io/github/forks/ckiplab/ckipnlp.svg?style=social&label=Fork&maxAge=3600
+.. |GitHub Forks| image:: https://img.shields.io/github/forks/ckiplab/ckip-classic.svg?style=social&label=Fork&maxAge=3600
 
-.. |GitHub Stars| image:: https://img.shields.io/github/stars/ckiplab/ckipnlp.svg?style=social&label=Star&maxAge=3600
+.. |GitHub Stars| image:: https://img.shields.io/github/stars/ckiplab/ckip-classic.svg?style=social&label=Star&maxAge=3600
 
-.. |GitHub Watchers| image:: https://img.shields.io/github/watchers/ckiplab/ckipnlp.svg?style=social&label=Watch&maxAge=3600
+.. |GitHub Watchers| image:: https://img.shields.io/github/watchers/ckiplab/ckip-classic.svg?style=social&label=Watch&maxAge=3600
 
 PyPI
 ----
 
-https://pypi.org/project/ckipnlp
+https://pypi.org/project/ckip-classic
 
 |PyPI Version| |PyPI License| |PyPI Downloads| |PyPI Python| |PyPI Implementation| |PyPI Status|
 
-.. |PyPI Version| image:: https://img.shields.io/pypi/v/ckipnlp.svg?maxAge=3600
-   :target: https://pypi.org/project/ckipnlp
+.. |PyPI Version| image:: https://img.shields.io/pypi/v/ckip-classic.svg?maxAge=3600
+   :target: https://pypi.org/project/ckip-classic
 
-.. |PyPI License| image:: https://img.shields.io/pypi/l/ckipnlp.svg?maxAge=3600
-   :target: https://github.com/ckiplab/ckipnlp/blob/master/LICENSE
+.. |PyPI License| image:: https://img.shields.io/pypi/l/ckip-classic.svg?maxAge=3600
+   :target: https://github.com/ckiplab/ckip-classic/blob/master/LICENSE
 
-.. |PyPI Downloads| image:: https://img.shields.io/pypi/dm/ckipnlp.svg?maxAge=3600
-   :target: https://pypi.org/project/ckipnlp#files
+.. |PyPI Downloads| image:: https://img.shields.io/pypi/dm/ckip-classic.svg?maxAge=3600
+   :target: https://pypi.org/project/ckip-classic#files
 
-.. |PyPI Python| image:: https://img.shields.io/pypi/pyversions/ckipnlp.svg?maxAge=3600
+.. |PyPI Python| image:: https://img.shields.io/pypi/pyversions/ckip-classic.svg?maxAge=3600
 
-.. |PyPI Implementation| image:: https://img.shields.io/pypi/implementation/ckipnlp.svg?maxAge=3600
+.. |PyPI Implementation| image:: https://img.shields.io/pypi/implementation/ckip-classic.svg?maxAge=3600
 
-.. |PyPI Format| image:: https://img.shields.io/pypi/format/ckipnlp.svg?maxAge=3600
+.. |PyPI Format| image:: https://img.shields.io/pypi/format/ckip-classic.svg?maxAge=3600
 
-.. |PyPI Status| image:: https://img.shields.io/pypi/status/ckipnlp.svg?maxAge=3600
+.. |PyPI Status| image:: https://img.shields.io/pypi/status/ckip-classic.svg?maxAge=3600
 
 Documentation
 -------------
 
-https://ckipnlp.readthedocs.io/
+https://ckip-classic.readthedocs.io/
 
 |ReadTheDocs Home|
 
-.. |ReadTheDocs Home| image:: https://img.shields.io/website/https/ckipnlp.readthedocs.io.svg?maxAge=3600&up_message=online&down_message=offline
-   :target: http://ckipnlp.readthedocs.io
+.. |ReadTheDocs Home| image:: https://img.shields.io/website/https/ckip-classic.readthedocs.io.svg?maxAge=3600&up_message=online&down_message=offline
+   :target: http://ckip-classic.readthedocs.io
 
 Contributers
 ------------
 
 * `Mu Yang <http://muyang.pro>`_ at `CKIP <https://ckip.iis.sinica.edu.tw>`_ (Author & Maintainer)
 * `Wei-Yun Ma <https://www.iis.sinica.edu.tw/pages/ma/>`_ at `CKIP <https://ckip.iis.sinica.edu.tw>`_ (Maintainer)
-* `DouglasWu <dgrey1116@gmail.com>`_
 
 External Links
 --------------
@@ -79,7 +81,6 @@ Requirements
 
 * `Python <http://www.python.org>`_ 3.5+
 * `Cython <http://cython.org>`_ 0.29+
-* `TreeLib <https://treelib.readthedocs.io>`_ 1.5+
 
 .. attention::
    For Python 2 users, please use `PyCkip 0.4.2 <https://pypi.org/project/pyckip/0.4.2/>`_ instead.
@@ -104,8 +105,8 @@ Install Using Pip
 
 .. code-block:: bash
 
-   pip install --upgrade ckipnlp
-   pip install --no-deps --force-reinstall --upgrade ckipnlp \
+   pip install --upgrade ckip-classic
+   pip install --no-deps --force-reinstall --upgrade ckip-classic \
       --install-option='--ws' \
       --install-option='--ws-dir=<ckipws-linux-root>' \
       --install-option='--parser' \
@@ -145,17 +146,17 @@ Installation Options
 Usage
 =====
 
-See http://ckipnlp.readthedocs.io/ for API details.
+See http://ckip-classic.readthedocs.io/ for API details.
 
 CKIPWS
 ------
 
 .. code-block:: python
 
-   import ckipnlp.ws
-   print(ckipnlp.__name__, ckipnlp.__version__)
+   import ckip_classic.ws
+   print(ckip_classic.__name__, ckip_classic.__version__)
 
-   ws = ckipnlp.ws.CkipWs(logger=False)
+   ws = ckip_classic.ws.CkipWs(logger=False)
    print(ws('中文字喔'))
    for l in ws.apply_list(['中文字喔', '啊哈哈哈']): print(l)
 
@@ -171,10 +172,10 @@ CKIPParser
 
 .. code-block:: python
 
-   import ckipnlp.parser
-   print(ckipnlp.__name__, ckipnlp.__version__)
+   import ckip_classic.parser
+   print(ckip_classic.__name__, ckip_classic.__version__)
 
-   ps = ckipnlp.parser.CkipParser(logger=False)
+   ps = ckip_classic.parser.CkipParser(logger=False)
    print(ps('中文字喔'))
    for l in ps.apply_list(['中文字喔', '啊哈哈哈']): print(l)
 
@@ -183,56 +184,30 @@ CKIPParser
        print(fin.read())
 
 
-Utilities
----------
-
-.. code-block:: python
-
-   import ckipnlp
-   print(ckipnlp.__name__, ckipnlp.__version__)
-
-   from ckipnlp.util.ws import *
-   from ckipnlp.util.parser import *
-
-   # Format CkipWs output
-   ws_text = ['中文字(Na)　喔(T)', '啊哈(I)　哈哈(D)']
-
-   # Show Sentence List
-   ws_sents = WsSentenceList.from_text(ws_text)
-   print(repr(ws_sents))
-   print(ws_sents.to_text())
-
-   # Show Each Sentence
-   for ws_sent in ws_sents: print(repr(ws_sent))
-   for ws_sent in ws_sents: print(ws_sent.to_text())
-
-   # Show CkipParser output as tree
-   tree_text = '#1:1.[0] S(theme:NP(possessor:N‧的(head:Nhaa:我|Head:DE:的)|Head:Nab(DUMMY1:Nab(DUMMY1:Nab:早餐|Head:Caa:、|DUMMY2:Naa:午餐)|Head:Caa:和|DUMMY2:Nab:晚餐))|quantity:Dab:都|target:PP(Head:P30:往|DUMMY:NP(property:Ncb:天|Head:Ncda:上))|Head:VA11:飛|aspect:Di:了)#'
-   tree = ParserTree.from_text(tree_text)
-   tree.show()
-
-   # Get heads of tree
-   for node in tree.get_heads(): print(node)
-
-   # Get heads of node 1
-   for node in tree.get_heads(1): print(node)
-
-   # Get heads of node 2
-   for node in tree.get_heads(2): print(node)
-
-   # Get heads of node 13
-   for node in tree.get_heads(13): print(node)
-
-   # Get relations
-   for rel in tree.get_relations(): print(rel)
-
-
 FAQ
 ===
 
 .. danger::
 
    Due to C code implementation, both ``CkipWs`` and ``CkipParser`` can only be instance once.
+
+------------
+
+.. warning::
+
+   CKIPParser fails if input text contains special characters such as ``()+-:|&#``. One may replace these characters by
+
+   .. code-block:: python
+
+      text = text
+         .replace('(', '（')
+         .replace(')', '）')
+         .replace('+', '＋')
+         .replace('-', '－')
+         .replace(':', '：')
+         .replace('|', '｜')
+         .replace('&', '＆') # for tree draw
+         .replace('#', '＃') # for tree draw
 
 ------------
 

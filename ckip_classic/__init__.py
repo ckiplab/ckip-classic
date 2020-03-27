@@ -5,10 +5,11 @@ __author_name__ = 'Mu Yang'
 __author_email__ = 'emfomy@gmail.com'
 __copyright__ = '2018-2020 CKIP Lab'
 
-__title__ = 'CKIPNLP'
-__version__ = '0.7.2'
-__description__ = 'CKIP CoreNLP Wrappers'
+__pkgname__ = 'ckip-classic'
+__title__ = 'CkipClassic'
+__version__ = '1.0.0'
+__description__ = 'CKIP Classic NLP Tools'
 __license__ = 'CC BY-NC-SA 4.0'
 
-__url__ = 'https://ckipnlp.readthedocs.io'
+__url__ = 'https://ckip-classic.readthedocs.io'
 __download_url__ = __url__+'/tarball/'+__version__
