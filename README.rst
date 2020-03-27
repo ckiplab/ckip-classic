@@ -199,7 +199,7 @@ FAQ
 
    .. code-block:: python
 
-      return (text
+      text = text
          .replace('(', '（')
          .replace(')', '）')
          .replace('+', '＋')
@@ -208,7 +208,6 @@ FAQ
          .replace('|', '｜')
          .replace('&', '＆') # for tree draw
          .replace('#', '＃') # for tree draw
-     )
 
 
 .. tip::
