@@ -209,6 +209,7 @@ FAQ
          .replace('&', '＆') # for tree draw
          .replace('#', '＃') # for tree draw
 
+------------
 
 .. tip::
 
