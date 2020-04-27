@@ -105,7 +105,7 @@ def os_environ_prepend(name, dirpath):
     else:
         os.environ[name] = dirpath
 
-class CommandMixin(object):
+class CommandMixin:
 
     user_options = [
         ('ws',        None, 'with CKIPWS [default]'),

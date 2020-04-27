@@ -62,19 +62,19 @@ class CkipWs:
         if not ini_file:
             ini_file, f_ini, kwargs = create_ws_ini(**kwargs)
 
-        def CkipWs(*, _=None): pass # pylint: disable=redefined-outer-name, invalid-name, multiple-statements
+        def CkipWs(*, _=None): pass  # pylint: disable=redefined-outer-name, invalid-name, multiple-statements
         CkipWs(**kwargs)
 
         self.__core.init_data(ini_file)
 
         try:
             f_lex.close()
-        except: # pylint: disable=bare-except
+        except:  # pylint: disable=bare-except
             pass
 
         try:
             f_ini.close()
-        except: # pylint: disable=bare-except
+        except:  # pylint: disable=bare-except
             pass
 
     def __call__(self, text):
@@ -88,8 +88,8 @@ class CkipWs:
             text : str
                 the input sentence.
 
-        Return
-        ------
+        Returns
+        -------
             str
                 the output sentence.
 
@@ -106,8 +106,8 @@ class CkipWs:
             ilist : List[str]
                 the list of input sentences.
 
-        Return
-        ------
+        Returns
+        -------
             List[str]
                 the list of output sentences.
         """
