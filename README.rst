@@ -2,7 +2,7 @@ Introduction
 ============
 
 .. attention::
-   Please use `CKIPNLP <https://pypi.org/project/ckipnlp/>`_ for structured data types and pipeline drivers.
+   Please use `CKIPNLP <https://ckipnlp.readthedocs.io/>`_ for structured data types and pipeline drivers.
 
 Git
 ---
@@ -63,12 +63,12 @@ https://ckip-classic.readthedocs.io/
 |ReadTheDocs Home|
 
 .. |ReadTheDocs Home| image:: https://img.shields.io/website/https/ckip-classic.readthedocs.io.svg?maxAge=3600&up_message=online&down_message=offline
-   :target: http://ckip-classic.readthedocs.io
+   :target: https://ckip-classic.readthedocs.io
 
 Contributers
 ------------
 
-* `Mu Yang <http://muyang.pro>`_ at `CKIP <https://ckip.iis.sinica.edu.tw>`_ (Author & Maintainer)
+* `Mu Yang <https://muyang.pro>`_ at `CKIP <https://ckip.iis.sinica.edu.tw>`_ (Author & Maintainer)
 * `Wei-Yun Ma <https://www.iis.sinica.edu.tw/pages/ma/>`_ at `CKIP <https://ckip.iis.sinica.edu.tw>`_ (Maintainer)
 
 External Links
@@ -79,8 +79,8 @@ External Links
 Requirements
 ------------
 
-* `Python <http://www.python.org>`_ 3.5+
-* `Cython <http://cython.org>`_ 0.29+
+* `Python <https://www.python.org>`_ 3.5+
+* `Cython <https://cython.org>`_ 0.29+
 
 .. attention::
    For Python 2 users, please use `PyCkip 0.4.2 <https://pypi.org/project/pyckip/0.4.2/>`_ instead.
@@ -146,7 +146,7 @@ Installation Options
 Usage
 =====
 
-See http://ckip-classic.readthedocs.io/ for API details.
+See https://ckip-classic.readthedocs.io/ for API details.
 
 CKIPWS
 ------

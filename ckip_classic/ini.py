@@ -42,7 +42,7 @@ def create_ws_lex(*lex_list
     f_lex.flush()
     return lex_file, f_lex
 
-def create_ws_ini(*, # pylint: disable=too-many-statements
+def create_ws_ini(*,  # pylint: disable=too-many-statements
     data2_dir=None,
     lex_file=None,
     new_style_format=False,
@@ -78,7 +78,7 @@ def create_ws_ini(*, # pylint: disable=too-many-statements
         Remember to close **f_ini** manually.
     """
 
-    # pylint: disable=invalid-name
+  # pylint: disable=invalid-name
 
     f_ini = _tempfile.NamedTemporaryFile(mode='w')
     ini_file = f_ini.name
@@ -353,7 +353,7 @@ def create_ws_ini(*, # pylint: disable=too-many-statements
     f_ini.flush()
     return ini_file, f_ini, options
 
-def create_parser_ini(*, # pylint: disable=too-many-statements
+def create_parser_ini(*,  # pylint: disable=too-many-statements
     ws_ini_file,
     rule_dir=None,
     rdb_dir=None,
@@ -373,7 +373,7 @@ def create_parser_ini(*, # pylint: disable=too-many-statements
             the path to "RDB/".
 
         do_ws : bool
-            do word-segmentation.
+            do word segmentation.
         do_parse : bool
             do parsing.
         do_role : bool
@@ -393,7 +393,7 @@ def create_parser_ini(*, # pylint: disable=too-many-statements
         Remember to close **f_ini** manually.
     """
 
-    # pylint: disable=invalid-name
+  # pylint: disable=invalid-name
 
     f_ini = _tempfile.NamedTemporaryFile(mode='w')
     ini_file = f_ini.name
@@ -422,7 +422,7 @@ def create_parser_ini(*, # pylint: disable=too-many-statements
         if not do_ws and not do_role:
             raise ValueError('Must select at least one task')
         if do_ws and not do_role:
-            raise ValueError('Use ckipws.CkipWs for word-segmentation')
+            raise ValueError('Use ckipws.CkipWs for word segmentation')
         if not do_ws and do_role:
             assign_role_only = True
         if do_ws and do_role:
