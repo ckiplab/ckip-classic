@@ -4,7 +4,7 @@ CKIP Classic NLP Tools
 .. toctree::
    :caption: Overview
 
-   src/readme
+   main/readme
 
 .. toctree::
    :caption: Contents

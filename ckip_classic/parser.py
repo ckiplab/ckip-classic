@@ -71,24 +71,24 @@ class CkipParser:
         if not ini_file:
             ini_file, f_ini, kwargs = create_parser_ini(ws_ini_file=ws_ini_file, **kwargs)
 
-        def CkipParser(*, _=None): pass # pylint: disable=redefined-outer-name, invalid-name, multiple-statements
+        def CkipParser(*, _=None): pass  # pylint: disable=redefined-outer-name, invalid-name, multiple-statements
         CkipParser(**kwargs)
 
         self.__core.init_data(ini_file)
 
         try:
             f_lex.close()
-        except: # pylint: disable=bare-except
+        except:  # pylint: disable=bare-except
             pass
 
         try:
             f_ws_ini.close()
-        except: # pylint: disable=bare-except
+        except:  # pylint: disable=bare-except
             pass
 
         try:
             f_ini.close()
-        except: # pylint: disable=bare-except
+        except:  # pylint: disable=bare-except
             pass
 
     def __call__(self, text):
@@ -102,8 +102,8 @@ class CkipParser:
             text : str
                 the input sentence.
 
-        Return
-        ------
+        Returns
+        -------
             str
                 the output sentence.
 
@@ -120,8 +120,8 @@ class CkipParser:
             ilist : List[str]
                 the list of input sentences.
 
-        Return
-        ------
+        Returns
+        -------
             List[str]
                 the list of output sentences.
         """
