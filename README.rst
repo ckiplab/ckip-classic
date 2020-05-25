@@ -1,8 +1,13 @@
 Introduction
 ============
 
+A Linux Python wrapper for CKIP classic tools — `CKIP Word Segmentation <http://ckip.iis.sinica.edu.tw/project/wordsegment/>`_ and `CKIP Parser <http://ckip.iis.sinica.edu.tw/project/parser/>`_.
+
 .. attention::
    Please use `CKIPNLP <https://ckipnlp.readthedocs.io/>`_ for structured data types and pipeline drivers.
+
+.. attention::
+   For Python 2 users, please use `PyCkip 0.4.2 <https://pypi.org/project/pyckip/0.4.2/>`_ instead.
 
 Git
 ---
@@ -82,31 +87,26 @@ Requirements
 * `Python <https://www.python.org>`_ 3.5+
 * `Cython <https://cython.org>`_ 0.29+
 
-.. attention::
-   For Python 2 users, please use `PyCkip 0.4.2 <https://pypi.org/project/pyckip/0.4.2/>`_ instead.
+Note that one should have CKIPWS/CKIPParser for this project:
 
-CKIPWS (Optional)
-^^^^^^^^^^^^^^^^^
-
-* `CKIP Word Segmentation <http://ckip.iis.sinica.edu.tw/project/wordsegment/>`_ Linux version 20190524+
-
-CKIPParser (Optional)
-^^^^^^^^^^^^^^^^^^^^^
-
-* `CKIP Parser <http://ckip.iis.sinica.edu.tw/project/parser/>`_ Linux version 20190506+ (20190725+ recommended)
+* `CKIP Word Segmentation <https://ckip.iis.sinica.edu.tw/project/ws/>`_ Linux version 20190524+
+   - `Academic License <http://ckipsvr.iis.sinica.edu.tw/ckipws/reg.php>`_
+   - `Commercial License <https://iptt.sinica.edu.tw/shares/405>`_
+* `CKIP Parser <https://ckip.iis.sinica.edu.tw/project/parser/>`_ Linux version 20190725+
+   - Academic License (not available)
+   - `Commercial License <https://iptt.sinica.edu.tw/shares/447>`_
 
 Installation
 ============
 
-Denote ``<ckipws-linux-root>`` as the root path of CKIPWS Linux Version, and ``<ckipparser-linux-root>`` as the root path of CKIPParser Linux Version.
+Download CKIPWS and/or CKIPParser from above links. Denote ``<ckipws-linux-root>`` as the root path of CKIPWS Linux Version, and ``<ckipparser-linux-root>`` as the root path of CKIPParser Linux Version.
 
 Install Using Pip
 -----------------
 
 .. code-block:: bash
 
-   pip install --upgrade ckip-classic
-   pip install --no-deps --force-reinstall --upgrade ckip-classic \
+   pip install --force-reinstall --upgrade ckip-classic \
       --install-option='--ws' \
       --install-option='--ws-dir=<ckipws-linux-root>' \
       --install-option='--parser' \
