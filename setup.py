@@ -186,43 +186,54 @@ class CommandMixin:
 
     def run(self):
 
+        name2mod = {em.name: em for em in self.distribution.ext_modules}
+
         # CKIPWS
         if self.ws:
             print('- Enable CKIPWS support')
             if self.ws_lib_dir:
-                print('- Use CKIPWS library from (%s)' % self.ws_lib_dir)
-                i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckip_classic._core.ws'), None)
-                self.distribution.ext_modules[i].library_dirs.append(self.ws_lib_dir)
-                self.distribution.ext_modules[i].runtime_library_dirs.append(self.ws_lib_dir)
+                print('- Use CKIPWS library from "%s"' % self.ws_lib_dir)
+                mod_ws = name2mod['ckip_classic._core.ws']
+                mod_ws.library_dirs.append(self.ws_lib_dir)
+                mod_ws.runtime_library_dirs.append(self.ws_lib_dir)
+                for lib in mod_ws.libraries:
+                    libfile = os.path.join(self.ws_lib_dir, lib + '.so')
+                    if not os.path.exists(libfile):
+                        print('  - [WARNING] Shared library not exist: %s' % libfile)
         else:
             print('- Disable CKIPWS support')
-            i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckip_classic._core.ws'), None)
-            if i is not None: del self.distribution.ext_modules[i]
+            del name2mod['ckip_classic._core.ws']
 
         # CKIPParser
         if self.parser:
             print('- Enable CKIPParser support')
             if self.parser_lib_dir:
-                print('- Use CKIPParser library from (%s)' % self.parser_lib_dir)
-                i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckip_classic._core.parser'), None)
-                self.distribution.ext_modules[i].library_dirs.append(self.parser_lib_dir)
-                self.distribution.ext_modules[i].runtime_library_dirs.append(self.parser_lib_dir)
+                print('- Use CKIPParser library from "%s"' % self.parser_lib_dir)
+                mod_parser = name2mod['ckip_classic._core.parser']
+                mod_parser.library_dirs.append(self.parser_lib_dir)
+                mod_parser.runtime_library_dirs.append(self.parser_lib_dir)
+                for lib in mod_parser.libraries:
+                    libfile = os.path.join(self.parser_lib_dir, lib + '.so')
+                    if not os.path.exists(libfile):
+                        print('  - [WARNING] Shared library not exist: %s' % libfile)
         else:
             print('- Disable CKIPParser support')
-            i = next((i for i, em in enumerate(self.distribution.ext_modules) if em.name == 'ckip_classic._core.parser'), None)
-            if i is not None: del self.distribution.ext_modules[i]
+            del name2mod['ckip_classic._core.parser']
+
+        # Re-register modules
+        self.distribution.ext_modules = list(name2mod.values())
 
         # Data
         if self.data2_dir:
-            print('- Use "Data2" from (%s)' % self.data2_dir)
+            print('- Use "Data2" from "%s"' % self.data2_dir)
             self.data_files('share/ckip_classic/Data2/', self.data2_dir)
 
         if self.rule_dir:
-            print('- Use "Rule" from (%s)' % self.rule_dir)
+            print('- Use "Rule" from "%s"' % self.rule_dir)
             self.data_files('share/ckip_classic/Rule/', self.rule_dir)
 
         if self.rdb_dir:
-            print('- Use "RDB" from (%s)' % self.rdb_dir)
+            print('- Use "RDB" from "%s"' % self.rdb_dir)
             self.data_files('share/ckip_classic/RDB/', self.rdb_dir)
 
         # Python packages
@@ -231,11 +242,14 @@ class CommandMixin:
         super(CommandMixin, self).run()
 
     def data_files(self, prefix, dirtop):
+        count = 0
         for dirpath, _, files in os.walk(dirtop):
+            count += len(files)
             self.distribution.data_files.append((
                 os.path.join(prefix, os.path.relpath(dirpath, dirtop)),
                 [os.path.join(dirpath, file) for file in files],
             ))
+        print('  - Found %s files' % count)
 
 class InstallCommand(CommandMixin, install):
     user_options = install.user_options + CommandMixin.user_options
