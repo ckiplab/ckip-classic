@@ -1,13 +1,13 @@
 Introduction
 ============
 
-A Linux Python wrapper for CKIP classic tools — `CKIP Word Segmentation <http://ckip.iis.sinica.edu.tw/project/wordsegment/>`_ and `CKIP Parser <http://ckip.iis.sinica.edu.tw/project/parser/>`_.
+A Linux Python wrapper for CKIP classic tools — `CKIP Word Segmentation <http://ckip.iis.sinica.edu.tw/project/wordsegment/>`__ and `CKIP Parser <http://ckip.iis.sinica.edu.tw/project/parser/>`__.
 
 .. attention::
-   Please use `CKIPNLP <https://ckipnlp.readthedocs.io/>`_ for structured data types and pipeline drivers.
+   Please use `CKIPNLP <https://ckipnlp.readthedocs.io/>`__ for structured data types and pipeline drivers.
 
 .. attention::
-   For Python 2 users, please use `PyCkip 0.4.2 <https://pypi.org/project/pyckip/0.4.2/>`_ instead.
+   For Python 2 users, please use `PyCkip 0.4.2 <https://pypi.org/project/pyckip/0.4.2/>`__ instead.
 
 Git
 ---
@@ -73,28 +73,28 @@ https://ckip-classic.readthedocs.io/
 Contributers
 ------------
 
-* `Mu Yang <https://muyang.pro>`_ at `CKIP <https://ckip.iis.sinica.edu.tw>`_ (Author & Maintainer)
-* `Wei-Yun Ma <https://www.iis.sinica.edu.tw/pages/ma/>`_ at `CKIP <https://ckip.iis.sinica.edu.tw>`_ (Maintainer)
+* `Mu Yang <https://muyang.pro>`__ at `CKIP <https://ckip.iis.sinica.edu.tw>`__ (Author & Maintainer)
+* `Wei-Yun Ma <https://www.iis.sinica.edu.tw/pages/ma/>`__ at `CKIP <https://ckip.iis.sinica.edu.tw>`__ (Maintainer)
 
 External Links
 --------------
 
-- `Online Demo <https://ckip.iis.sinica.edu.tw/service/corenlp>`_
+- `Online Demo <https://ckip.iis.sinica.edu.tw/service/corenlp>`__
 
 Requirements
 ------------
 
-* `Python <https://www.python.org>`_ 3.5+
-* `Cython <https://cython.org>`_ 0.29+
+* `Python <https://www.python.org>`__ 3.5+
+* `Cython <https://cython.org>`__ 0.29+
 
 Note that one should have CKIPWS/CKIPParser for this project:
 
-* `CKIP Word Segmentation <https://ckip.iis.sinica.edu.tw/project/ws/>`_ Linux version 20190524+
-   - `Academic License <http://ckipsvr.iis.sinica.edu.tw/ckipws/reg.php>`_
-   - `Commercial License <https://iptt.sinica.edu.tw/shares/405>`_
-* `CKIP Parser <https://ckip.iis.sinica.edu.tw/project/parser/>`_ Linux version 20190725+
+* `CKIP Word Segmentation <https://ckip.iis.sinica.edu.tw/project/ws/>`__ Linux version 20190524+
+   - `Academic License <http://ckipsvr.iis.sinica.edu.tw/ckipws/reg.php>`__
+   - `Commercial License <https://iptt.sinica.edu.tw/shares/405>`__
+* `CKIP Parser <https://ckip.iis.sinica.edu.tw/project/parser/>`__ Linux version 20190725+
    - Academic License (not available)
-   - `Commercial License <https://iptt.sinica.edu.tw/shares/447>`_
+   - `Commercial License <https://iptt.sinica.edu.tw/shares/447>`__
 
 Installation
 ============
@@ -113,6 +113,9 @@ Install Using Pip
       --install-option='--parser-dir=<ckipparser-linux-root>'
 
 Ignore ws/parser options if one doesn't have CKIPWS/CKIPParser.
+
+.. attention::
+   Please use absolute paths.
 
 Installation Options
 --------------------
@@ -238,7 +241,7 @@ License
 
 |CC BY-NC-SA 4.0|
 
-Copyright (c) 2018-2020 `CKIP Lab <https://ckip.iis.sinica.edu.tw>`_ under the `CC BY-NC-SA 4.0 License <http://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
+Copyright (c) 2018-2020 `CKIP Lab <https://ckip.iis.sinica.edu.tw>`__ under the `CC BY-NC-SA 4.0 License <http://creativecommons.org/licenses/by-nc-sa/4.0/>`__.
 
 .. |CC BY-NC-SA 4.0| image:: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
    :target: http://creativecommons.org/licenses/by-nc-sa/4.0/
