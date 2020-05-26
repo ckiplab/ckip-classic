@@ -99,7 +99,7 @@ Note that one should have CKIPWS/CKIPParser for this project:
 Installation
 ============
 
-Download CKIPWS and/or CKIPParser from above links. Denote ``<ckipws-linux-root>`` as the root path of CKIPWS Linux Version, and ``<ckipparser-linux-root>`` as the root path of CKIPParser Linux Version.
+Download CKIPWS and/or CKIPParser from above links. Denote ``<ckipws-linux-root>`` as the folder containing CKIPWS, and ``<ckipparser-linux-root>`` as the folder containing CKIPParser.
 
 Install Using Pip
 -----------------
