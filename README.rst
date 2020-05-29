@@ -90,9 +90,11 @@ Requirements
 Note that one should have CKIPWS/CKIPParser for this project:
 
 * `CKIP Word Segmentation <https://ckip.iis.sinica.edu.tw/project/ws/>`__ Linux version 20190524+
+
    - `Academic License <http://ckipsvr.iis.sinica.edu.tw/ckipws/reg.php>`__
    - `Commercial License <https://iptt.sinica.edu.tw/shares/405>`__
 * `CKIP Parser <https://ckip.iis.sinica.edu.tw/project/parser/>`__ Linux version 20190725+
+
    - Academic License (not available)
    - `Commercial License <https://iptt.sinica.edu.tw/shares/447>`__
 
