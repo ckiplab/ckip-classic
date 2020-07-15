@@ -40,7 +40,7 @@ def main():
         readme = fin.read()
 
     setup(
-        name=about.__pkgname__,
+        name='ckip-classic',
         version=about.__version__,
         author=about.__author_name__,
         author_email=about.__author_email__,

@@ -5,7 +5,6 @@ __author_name__ = 'Mu Yang'
 __author_email__ = 'emfomy@gmail.com'
 __copyright__ = '2018-2020 CKIP Lab'
 
-__pkgname__ = 'ckip-classic'
 __title__ = 'CkipClassic'
 __version__ = '1.0.4'
 __description__ = 'CKIP Classic NLP Tools'
