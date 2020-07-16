@@ -40,7 +40,7 @@ def main():
         readme = fin.read()
 
     setup(
-        name=about.__pkgname__,
+        name='ckip-classic',
         version=about.__version__,
         author=about.__author_name__,
         author_email=about.__author_email__,
@@ -60,7 +60,6 @@ def main():
             'Programming Language :: Python :: 3.6',
             'Programming Language :: Python :: 3.7',
             'Programming Language :: Python :: 3.8',
-            'Programming Language :: Python :: 3.9',
             'Programming Language :: Python :: 3 :: Only',
             'Programming Language :: Cython',
             'License :: Free for non-commercial use',
@@ -139,7 +138,7 @@ class CommandMixin:
         self.ws_lib_dir   = None
         self.ws_share_dir = None
 
-        self.parser_dir = None
+        self.parser_dir       = None
         self.parser_lib_dir   = None
         self.parser_share_dir = None
 
@@ -197,7 +196,7 @@ class CommandMixin:
                 mod_ws.library_dirs.append(self.ws_lib_dir)
                 mod_ws.runtime_library_dirs.append(self.ws_lib_dir)
                 for lib in mod_ws.libraries:
-                    libfile = os.path.join(self.ws_lib_dir, lib + '.so')
+                    libfile = os.path.join(self.ws_lib_dir, f'lib{lib}.so')
                     if not os.path.exists(libfile):
                         print('  - [WARNING] Shared library not exist: %s' % libfile)
         else:
@@ -213,7 +212,7 @@ class CommandMixin:
                 mod_parser.library_dirs.append(self.parser_lib_dir)
                 mod_parser.runtime_library_dirs.append(self.parser_lib_dir)
                 for lib in mod_parser.libraries:
-                    libfile = os.path.join(self.parser_lib_dir, lib + '.so')
+                    libfile = os.path.join(self.parser_lib_dir, f'lib{lib}.so')
                     if not os.path.exists(libfile):
                         print('  - [WARNING] Shared library not exist: %s' % libfile)
         else:

@@ -24,7 +24,7 @@ cdef class CkipWsCore:
     def init_data(self, str inifile):
         ret = cckipws.WordSeg_InitData(self.__obj, inifile.encode())
         if not ret:
-            raise IOError()
+            raise IOError(f'Initialize {self.__class__.__name__} failed')
 
     def enable_logger(self):
         cckipws.WordSeg_EnableConsoleLogger(self.__obj)

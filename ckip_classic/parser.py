@@ -11,13 +11,11 @@ import warnings as _warnings
 try:
     if not _os.environ.get('_SPHINX'):
         from ckip_classic._core.parser import CkipParserCore
-except ImportError as exc:
-    raise ImportError(
+except ImportError as exc:  # pragma: no cover
+    raise ImportError(  # pragma: no cover
         'Please reinstall ‘ckip-classic’ with ‘--install-option=\'--parser\'’.  --install-option=\'--parser-dir=<...>\''
         'Visit https://pypi.org/project/ckip-classic for more information.'
     ) from exc
-except Exception as exc:
-    raise exc
 
 from ckip_classic.ini import create_ws_lex, create_ws_ini, create_parser_ini
 
@@ -59,7 +57,7 @@ class CkipParser:
 
         if logger:
             # self.__core.enable_logger()
-            _warnings.warn('Logger is not supported for CKIP Parser')
+            _warnings.warn('Logger is not supported for CKIP Parser')  # pragma: no cover
 
         if lex_list:
             lex_file, f_lex = create_ws_lex(*lex_list)
@@ -78,18 +76,18 @@ class CkipParser:
 
         try:
             f_lex.close()
-        except:  # pylint: disable=bare-except
-            pass
+        except:  # pylint: disable=bare-except  # pragma: no cover
+            pass  # pragma: no cover
 
         try:
             f_ws_ini.close()
-        except:  # pylint: disable=bare-except
-            pass
+        except:  # pylint: disable=bare-except  # pragma: no cover
+            pass  # pragma: no cover
 
         try:
             f_ini.close()
-        except:  # pylint: disable=bare-except
-            pass
+        except:  # pylint: disable=bare-except  # pragma: no cover
+            pass  # pragma: no cover
 
     def __call__(self, text):
         return self.apply(text)

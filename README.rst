@@ -90,9 +90,11 @@ Requirements
 Note that one should have CKIPWS/CKIPParser for this project:
 
 * `CKIP Word Segmentation <https://ckip.iis.sinica.edu.tw/project/ws/>`__ Linux version 20190524+
+
    - `Academic License <http://ckipsvr.iis.sinica.edu.tw/ckipws/reg.php>`__
    - `Commercial License <https://iptt.sinica.edu.tw/shares/405>`__
 * `CKIP Parser <https://ckip.iis.sinica.edu.tw/project/parser/>`__ Linux version 20190725+
+
    - Academic License (not available)
    - `Commercial License <https://iptt.sinica.edu.tw/shares/447>`__
 
@@ -198,7 +200,7 @@ FAQ
 
 .. warning::
 
-   CKIPParser fails if input text contains special characters such as ``()+-:|&#``. One may replace these characters by
+   CKIPParser fails if input text contains special characters such as ``()+-:|``. One may replace these characters by
 
    .. code-block:: python
 
@@ -209,8 +211,18 @@ FAQ
          .replace('-', '－')
          .replace(':', '：')
          .replace('|', '｜')
-         .replace('&', '＆') # for tree draw
-         .replace('#', '＃') # for tree draw
+
+------------
+
+.. tip::
+
+   **fatal error: Python.h: No such file or directory". What should I do?**
+
+   Install Python development package
+
+   .. code-block:: bash
+
+      sudo apt-get install python3-dev
 
 ------------
 

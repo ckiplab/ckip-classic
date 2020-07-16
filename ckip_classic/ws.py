@@ -10,13 +10,11 @@ import os as _os
 try:
     if not _os.environ.get('_SPHINX'):
         from ckip_classic._core.ws import CkipWsCore
-except ImportError as exc:
-    raise ImportError(
+except ImportError as exc:  # pragma: no cover
+    raise ImportError(  # pragma: no cover
         'Please reinstall ‘ckip-classic’ with ‘--install-option=\'--ws\' --install-option=\'--ws-dir=<...>\'’. '
         'Visit https://pypi.org/project/ckip-classic for more information.'
     ) from exc
-except Exception as exc:
-    raise exc
 
 from ckip_classic.ini import create_ws_lex, create_ws_ini
 
@@ -52,11 +50,10 @@ class CkipWs:
         self.__core = CkipWsCore()
 
         if logger:
-            self.__core.enable_logger()
+            self.__core.enable_logger()  # pragma: no cover
 
         if lex_list:
             lex_file, f_lex = create_ws_lex(*lex_list)
-
             kwargs['lex_file'] = lex_file
 
         if not ini_file:
@@ -69,13 +66,13 @@ class CkipWs:
 
         try:
             f_lex.close()
-        except:  # pylint: disable=bare-except
-            pass
+        except:  # pylint: disable=bare-except  # pragma: no cover
+            pass  # pragma: no cover
 
         try:
             f_ini.close()
-        except:  # pylint: disable=bare-except
-            pass
+        except:  # pylint: disable=bare-except  # pragma: no cover
+            pass  # pragma: no cover
 
     def __call__(self, text):
         return self.apply(text)

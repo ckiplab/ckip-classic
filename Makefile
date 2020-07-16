@@ -1,25 +1,36 @@
 PY = python3
 RM = rm -rf
-LINT = pylint --rcfile=./.pylintrc
 TWINE = twine
+TOX = tox
+LINT = pylint --rcfile=./.pylintrc
 
-.PHONY: all check dist sdist test lint doc upload clean
+.PHONY: all check dist sdist test tox tox-v tox-report lint doc upload clean
 
 all: dist check test
 
 dist: sdist
 
+test: tox lint
+
 sdist:
 	$(PY) setup.py $@
+
+tox:
+	$(TOX) -p -e py{36,37,38}
+
+tox-v:
+	$(TOX) -e py{36,37,38}
+
+tox-report:
+	- $(TOX) -p -e clean,py36,report -- --cov-report=term-missing --cov-append
+	python3.7 -m http.server --directory .test/htmlcov/ 3000
+
+lint:
+	$(LINT) ckip_classic
 
 check:
 	$(TWINE) check dist/*
 	# $(PY) setup.py check -r -s
-
-test: lint
-
-lint:
-	$(LINT) ckip_classic
 
 doc:
 	( cd docs ; make clean ; make html )
@@ -29,6 +40,7 @@ upload: dist check
 	$(TWINE) upload --repository-url https://test.pypi.org/legacy/ dist/*.tar.gz --verbose
 
 clean:
-	( cd docs ; make clean )
-	$(PY) setup.py clean -a
-	$(RM) build dist *.egg-info *.so __pycache__
+	- ( cd docs ; make clean )
+	- $(PY) setup.py clean -a
+	- $(TOX) -e clean
+	- $(RM) build dist *.egg-info .eggs .tox .test __pycache__ .lookup
