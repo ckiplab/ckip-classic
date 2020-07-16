@@ -43,4 +43,4 @@ clean:
 	- ( cd docs ; make clean )
 	- $(PY) setup.py clean -a
 	- $(TOX) -e clean
-	- $(RM) build dist .tox .test __pycache__
+	- $(RM) build dist *.egg-info .eggs .tox .test __pycache__ .lookup
