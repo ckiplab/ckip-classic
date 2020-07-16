@@ -5,9 +5,12 @@ __author__ = 'Mu Yang <http://muyang.pro>'
 __copyright__ = '2018-2020 CKIP Lab'
 __license__ = 'CC BY-NC-SA 4.0'
 
+import os
 import tempfile
 
 from ckip_classic.ws import CkipWs
+
+sample_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'file')
 
 ################################################################################################################################
 
@@ -32,10 +35,10 @@ def test_apply_list():
 def test_apply_file():
     tmpdir = tempfile.TemporaryDirectory()
     ws.apply_file(
-        ifile='test/file/sample.txt',
+        ifile=f'{sample_path}/sample.txt',
         ofile=f'{tmpdir.name}/output.tag',
         uwfile=f'{tmpdir.name}/output.uw',
     )
 
-    assert open('test/file/sample.tag').read() == open(f'{tmpdir.name}/output.tag').read()
-    assert open('test/file/sample.uw').read() == open(f'{tmpdir.name}/output.uw').read()
+    assert open(f'{sample_path}/sample.tag').read() == open(f'{tmpdir.name}/output.tag').read()
+    assert open(f'{sample_path}/sample.uw').read() == open(f'{tmpdir.name}/output.uw').read()

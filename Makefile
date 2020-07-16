@@ -4,7 +4,7 @@ TWINE = twine
 TOX = tox
 LINT = pylint --rcfile=./.pylintrc
 
-.PHONY: all check dist sdist test tox tox-seq tox-report lint doc upload clean
+.PHONY: all check dist sdist test tox tox-v tox-report lint doc upload clean
 
 all: dist check test
 
@@ -16,13 +16,14 @@ sdist:
 	$(PY) setup.py $@
 
 tox:
-	- $(TOX) -p -- --cov-report=term-missing --cov-append
+	$(TOX) -p -e py{36,37,38}
 
-tox-seq:
+tox-v:
 	$(TOX) -e py{36,37,38}
 
-tox-report: tox
-	python3.7 -m http.server --directory htmlcov/ 3000
+tox-report:
+	- $(TOX) -p -e clean,py36,report -- --cov-report=term-missing --cov-append
+	python3.7 -m http.server --directory .test/htmlcov/ 3000
 
 lint:
 	$(LINT) ckip_classic
@@ -41,4 +42,5 @@ upload: dist check
 clean:
 	- ( cd docs ; make clean )
 	- $(PY) setup.py clean -a
-	- $(RM) build dist .tox .coverage htmlcov *.egg-info *.so __pycache__
+	- $(TOX) -e clean
+	- $(RM) build dist .tox .test __pycache__

@@ -5,9 +5,12 @@ __author__ = 'Mu Yang <http://muyang.pro>'
 __copyright__ = '2018-2020 CKIP Lab'
 __license__ = 'CC BY-NC-SA 4.0'
 
+import os
 import tempfile
 
 from ckip_classic.parser import CkipParser
+
+sample_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'file')
 
 ################################################################################################################################
 
@@ -32,8 +35,8 @@ def test_apply_list():
 def test_apply_file():
     tmpdir = tempfile.TemporaryDirectory()
     parser.apply_file(
-        ifile='test/file/sample.txt',
+        ifile=f'{sample_path}/sample.txt',
         ofile=f'{tmpdir.name}/output.parse',
     )
 
-    assert open('test/file/sample.parse').read() == open(f'{tmpdir.name}/output.parse').read()
+    assert open(f'{sample_path}/sample.parse').read() == open(f'{tmpdir.name}/output.parse').read()

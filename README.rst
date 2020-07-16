@@ -200,7 +200,7 @@ FAQ
 
 .. warning::
 
-   CKIPParser fails if input text contains special characters such as ``()+-:|&#``. One may replace these characters by
+   CKIPParser fails if input text contains special characters such as ``()+-:|``. One may replace these characters by
 
    .. code-block:: python
 
@@ -211,8 +211,18 @@ FAQ
          .replace('-', '－')
          .replace(':', '：')
          .replace('|', '｜')
-         .replace('&', '＆') # for tree draw
-         .replace('#', '＃') # for tree draw
+
+------------
+
+.. tip::
+
+   **fatal error: Python.h: No such file or directory". What should I do?**
+
+   Install Python development package
+
+   .. code-block:: bash
+
+      sudo apt-get install python3-dev
 
 ------------
 
