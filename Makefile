@@ -15,22 +15,15 @@ test: tox lint
 sdist:
 	$(PY) setup.py $@
 
-tox:
-	$(TOX) -p -e py{36,37,38}
-
-tox-v:
-	$(TOX) -e py{36,37,38}
-
-tox-report:
-	- $(TOX) -p -e clean,py36,report -- --cov-report=term-missing --cov-append
-	python3.7 -m http.server --directory .test/htmlcov/ 3000
-
 lint:
 	$(LINT) ckip_classic
 
 check:
 	$(TWINE) check dist/*
 	# $(PY) setup.py check -r -s
+
+tox tox-v tox-report:
+	( cd test ; make $@ )
 
 doc:
 	( cd docs ; make clean ; make html )
@@ -42,5 +35,4 @@ upload: dist check
 clean:
 	- ( cd docs ; make clean )
 	- $(PY) setup.py clean -a
-	- $(TOX) -e clean
 	- $(RM) build dist *.egg-info .eggs .tox .test __pycache__ .lookup
