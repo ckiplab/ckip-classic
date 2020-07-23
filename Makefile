@@ -35,4 +35,4 @@ upload: dist check
 clean:
 	- ( cd docs ; make clean )
 	- $(PY) setup.py clean -a
-	- $(RM) build dist *.egg-info .eggs .tox .test __pycache__ .lookup
+	- $(RM) build dist *.egg-info .eggs .tox .test __pycache__
