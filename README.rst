@@ -84,7 +84,7 @@ External Links
 Requirements
 ------------
 
-* `Python <https://www.python.org>`__ 3.5+
+* `Python <https://www.python.org>`__ 3.6+
 * `Cython <https://cython.org>`__ 0.29+
 
 Note that one should have CKIPWS/CKIPParser for this project:
