@@ -67,21 +67,6 @@ def main():
         ],
         python_requires='>=3.6',
         packages=find_namespace_packages(include=['ckip_classic', 'ckip_classic.*',]),
-        ext_modules=cythonize(
-            [
-                Extension('ckip_classic._core.ws',
-                    sources=['src/ws/ckipws.pyx'],
-                    libraries=['WordSeg'],
-                    language='c++',
-                ),
-                Extension('ckip_classic._core.parser',
-                    sources=['src/parser/ckipparser.pyx'],
-                    libraries=['CKIPCoreNLP', 'CKIPParser', 'CKIPWS', 'CKIPSRL'],
-                    language='c++',
-                ),
-            ],
-            build_dir='build',
-        ),
         data_files=[],
         cmdclass={
             'install': InstallCommand,
@@ -184,42 +169,57 @@ class CommandMixin:
 
     def run(self):
 
-        name2mod = {em.name: em for em in self.distribution.ext_modules}
+        self.distribution.ext_modules = []
 
         # CKIPWS
         if self.ws:
             print('- Enable CKIPWS support')
             if self.ws_lib_dir:
                 print('- Use CKIPWS library from "%s"' % self.ws_lib_dir)
-                mod_ws = name2mod['ckip_classic._core.ws']
-                mod_ws.library_dirs.append(self.ws_lib_dir)
-                mod_ws.runtime_library_dirs.append(self.ws_lib_dir)
+                mod_ws, = cythonize(
+                    [
+                        Extension('ckip_classic._core.ws',
+                            sources=['src/ws/ckipws.pyx'],
+                            libraries=['WordSeg'],
+                            library_dirs=[self.ws_lib_dir],
+                            runtime_library_dirs=[self.ws_lib_dir],
+                            language='c++',
+                        ),
+                    ],
+                    build_dir='build',
+                )
                 for lib in mod_ws.libraries:
                     libfile = os.path.join(self.ws_lib_dir, f'lib{lib}.so')
                     if not os.path.exists(libfile):
                         print('  - [WARNING] Shared library not exist: %s' % libfile)
+                self.distribution.ext_modules.append(mod_ws)
         else:
             print('- Disable CKIPWS support')
-            del name2mod['ckip_classic._core.ws']
 
         # CKIPParser
         if self.parser:
             print('- Enable CKIPParser support')
             if self.parser_lib_dir:
                 print('- Use CKIPParser library from "%s"' % self.parser_lib_dir)
-                mod_parser = name2mod['ckip_classic._core.parser']
-                mod_parser.library_dirs.append(self.parser_lib_dir)
-                mod_parser.runtime_library_dirs.append(self.parser_lib_dir)
+                mod_parser, = cythonize(
+                    [
+                        Extension('ckip_classic._core.parser',
+                            sources=['src/parser/ckipparser.pyx'],
+                            libraries=['CKIPCoreNLP', 'CKIPParser', 'CKIPWS', 'CKIPSRL'],
+                            library_dirs=[self.parser_lib_dir],
+                            runtime_library_dirs=[self.parser_lib_dir],
+                            language='c++',
+                        ),
+                    ],
+                    build_dir='build',
+                )
                 for lib in mod_parser.libraries:
                     libfile = os.path.join(self.parser_lib_dir, f'lib{lib}.so')
                     if not os.path.exists(libfile):
                         print('  - [WARNING] Shared library not exist: %s' % libfile)
+                self.distribution.ext_modules.append(mod_parser)
         else:
             print('- Disable CKIPParser support')
-            del name2mod['ckip_classic._core.parser']
-
-        # Re-register modules
-        self.distribution.ext_modules = list(name2mod.values())
 
         # Data
         if self.data2_dir:
