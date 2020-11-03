@@ -7,19 +7,11 @@ __license__ = 'CC BY-NC-SA 4.0'
 
 import os
 
-from dotenv import load_dotenv
-
 from ckip_classic.client import CkipParserClient
 
 ################################################################################################################################
 
-load_dotenv()
-USERNAME = os.getenv('CLIENT_USERNAME')
-PASSWORD = os.getenv('CLIENT_PASSWORD')
-
-################################################################################################################################
-
-parser = CkipParserClient(username=USERNAME, password=PASSWORD, )
+parser = CkipParserClient()
 
 text_in = [
     '中文字(Na)　耶(T)　，(COMMACATEGORY)',
