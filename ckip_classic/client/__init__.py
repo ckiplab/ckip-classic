@@ -21,7 +21,7 @@ class CkipParserClient:
 
     Note
     ----
-        One may apply the account from http://parser.iis.sinica.edu.tw/v1/reg.exe
+        One may register an account at http://parser.iis.sinica.edu.tw/v1/reg.exe
 
     """
 

@@ -84,7 +84,7 @@ External Links
 Requirements
 ------------
 
-* `Python <https://www.python.org>`__ 3.5+
+* `Python <https://www.python.org>`__ 3.6+
 * `Cython <https://cython.org>`__ 0.29+
 
 Note that one should have CKIPWS/CKIPParser for this project:
@@ -93,18 +93,24 @@ Note that one should have CKIPWS/CKIPParser for this project:
 
    - `Academic License <http://ckipsvr.iis.sinica.edu.tw/ckipws/reg.php>`__
    - `Commercial License <https://iptt.sinica.edu.tw/shares/405>`__
+
 * `CKIP Parser <https://ckip.iis.sinica.edu.tw/project/parser/>`__ Linux version 20190725+
 
-   - Academic License (not available)
+   - `Academic License <http://parser.iis.sinica.edu.tw/v1/reg.exe>`__ (Online Version)
    - `Commercial License <https://iptt.sinica.edu.tw/shares/447>`__
 
 Installation
 ============
 
-Download CKIPWS and/or CKIPParser from above links. Denote ``<ckipws-linux-root>`` as the folder containing CKIPWS, and ``<ckipparser-linux-root>`` as the folder containing CKIPParser.
+.. attention::
 
-Install Using Pip
------------------
+   - Offline version: CKIPWS (Academic/Commercial License) and CKIPParser (Commercial License).
+   - Online version: CKIPParser (Academic License).
+
+Offline Version
+---------------
+
+Download CKIPWS and/or CKIPParser from above links. Denote ``<ckipws-linux-root>`` as the folder containing CKIPWS, and ``<ckipparser-linux-root>`` as the folder containing CKIPParser.
 
 .. code-block:: bash
 
@@ -118,6 +124,17 @@ Ignore ws/parser options if one doesn't have CKIPWS/CKIPParser.
 
 .. attention::
    Please use absolute paths.
+
+Online Version
+--------------
+
+Register an account at `http://parser.iis.sinica.edu.tw/v1/reg.exe`
+
+.. code-block:: bash
+
+   pip install --force-reinstall --upgrade ckip-classic \
+      --install-option='--no-ws' \
+      --install-option='--no-parser'
 
 Installation Options
 --------------------
@@ -156,6 +173,8 @@ See https://ckip-classic.readthedocs.io/ for API details.
 CKIPWS
 ------
 
+CKIP Word Segmentation offline driver.
+
 .. code-block:: python
 
    import ckip_classic.ws
@@ -173,7 +192,9 @@ CKIPWS
 
 
 CKIPParser
------------
+----------
+
+CKIP Parser offline driver.
 
 .. code-block:: python
 
@@ -187,6 +208,21 @@ CKIPParser
    ps.apply_file(ifile='sample/sample.txt', ofile='output/sample.tree')
    with open('output/sample.tree') as fin:
        print(fin.read())
+
+
+CKIPParserClient
+----------------
+
+CKIP Parser online client.
+
+.. code-block:: python
+
+   import ckip_classic.client
+   print(ckip_classic.__name__, ckip_classic.__version__)
+
+   ps = ckip_classic.client.CkipParserClient(username='USERNAME', password='PASSWORD')
+   print(ps('中文字(Na)　耶(T)　，(COMMACATEGORY)'))
+   for l in ps.apply_list(['中文字(Na)　耶(T)　，(COMMACATEGORY)', '啊(I)　哈(D)　哈(D)　哈(D)　。(PERIODCATEGORY)']): print(l)
 
 
 FAQ
