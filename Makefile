@@ -34,5 +34,6 @@ upload: dist check
 
 clean:
 	- ( cd docs ; make clean )
+	- ( cd test ; make clean )
 	- $(PY) setup.py clean -a
 	- $(RM) build dist *.egg-info .eggs .tox .test __pycache__
