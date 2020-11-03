@@ -5,6 +5,9 @@ __author__ = 'Mu Yang <http://muyang.pro>'
 __copyright__ = '2018-2020 CKIP Lab'
 __license__ = 'CC BY-NC-SA 4.0'
 
+import os as _os
+import warnings as _warnings
+
 from ._parser import CkipParserSocket
 
 ################################################################################################################################
@@ -15,9 +18,9 @@ class CkipParserClient:
     Parameters
     ----------
         username : str
-            the username.
+            the username (default to the environment variable `$CKIPPARSER_USERNAME`).
         password : str
-            the password.
+            the password (default to the environment variable `$CKIPPARSER_PASSWORD`).
 
     Note
     ----
@@ -25,7 +28,16 @@ class CkipParserClient:
 
     """
 
-    def __init__(self, *, username, password):
+    def __init__(self, *,
+            username=_os.getenv('CKIPPARSER_USERNAME'),
+            password=_os.getenv('CKIPPARSER_PASSWORD'),
+        ):
+
+        if username is None:
+            _warnings.warn('Invalid username (%s)' % username)
+        if password is None:
+            _warnings.warn('Invalid password (%s)' % password)
+
         self.socket = CkipParserSocket(username=username, password=password)
 
     def __call__(self, text):
