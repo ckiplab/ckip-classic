@@ -132,9 +132,7 @@ Register an account at `http://parser.iis.sinica.edu.tw/v1/reg.exe`
 
 .. code-block:: bash
 
-   pip install --force-reinstall --upgrade ckip-classic \
-      --install-option='--no-ws' \
-      --install-option='--no-parser'
+   pip install --upgrade ckip-classic
 
 Installation Options
 --------------------
