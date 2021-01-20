@@ -13,7 +13,7 @@ tox-v:
 
 tox-vv:
 	NO_COV= $(TOX) -e py36-client -- -vv
-	NO_COV= $(TOX) -e py{36,37,38} -- -vv
+	NO_COV= $(TOX) -e py36 -- -vv
 
 tox-report:
 	- $(TOX) -p -e clean,py36,py36-client,report -- --cov-append
