@@ -3,7 +3,7 @@
 
 __author__ = 'Mu Yang <http://muyang.pro>'
 __copyright__ = '2018-2020 CKIP Lab'
-__license__ = 'CC BY-NC-SA 4.0'
+__license__ = 'GPL-3.0'
 
 from setuptools import dist
 dist.Distribution().fetch_build_eggs([
@@ -61,7 +61,7 @@ def main():
             'Programming Language :: Python :: 3.8',
             'Programming Language :: Python :: 3 :: Only',
             'Programming Language :: Cython',
-            'License :: Free for non-commercial use',
+            'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
             'Operating System :: POSIX :: Linux',
             'Natural Language :: Chinese (Traditional)',
         ],
