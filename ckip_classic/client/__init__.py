@@ -3,7 +3,7 @@
 
 __author__ = 'Mu Yang <http://muyang.pro>'
 __copyright__ = '2018-2020 CKIP Lab'
-__license__ = 'CC BY-NC-SA 4.0'
+__license__ = 'GPL-3.0'
 
 import os as _os
 import warnings as _warnings
@@ -18,9 +18,9 @@ class CkipParserClient:
     Parameters
     ----------
         username : str
-            the username (default to the environment variable `$CKIPPARSER_USERNAME`).
+            the username (default to the environment variable ``$CKIPPARSER_USERNAME``).
         password : str
-            the password (default to the environment variable `$CKIPPARSER_PASSWORD`).
+            the password (default to the environment variable ``$CKIPPARSER_PASSWORD``).
 
     Note
     ----
