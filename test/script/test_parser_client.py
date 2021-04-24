@@ -24,7 +24,6 @@ def test_apply():
 
 def test_apply_list():
     text_out = parser.apply_list(text_in)
-    print(text_out)
     assert text_out == [
         '#1:1.[0] S(Head:Nab:中文字|particle:Td:耶)#，(COMMACATEGORY)',
         '#1:1.[0] %(particle:interjection(Head:I:啊)|time:Dh:哈|time:Dh:哈|time:Dh:哈)#。(PERIODCATEGORY)',

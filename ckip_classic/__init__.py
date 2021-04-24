@@ -6,7 +6,7 @@ __author_email__ = 'emfomy@gmail.com'
 __copyright__ = '2018-2020 CKIP Lab'
 
 __title__ = 'CkipClassic'
-__version__ = '1.2.0'
+__version__ = '1.2.1'
 __description__ = 'CKIP Classic NLP Tools'
 __license__ = 'GPL-3.0'
 
