@@ -34,9 +34,9 @@ class CkipParserClient:
         ):
 
         if username is None:
-            _warnings.warn('Invalid username (%s)' % username)
+            raise RuntimeError('Username not specified.')
         if password is None:
-            _warnings.warn('Invalid password (%s)' % password)
+            raise RuntimeError('Password not specified.')
 
         self.socket = CkipParserSocket(username=username, password=password)
 
@@ -59,6 +59,9 @@ class CkipParserClient:
         .. hint::
             One may also call this method as :meth:`__call__`.
         """
+        res = self.socket(text)[0]
+        if res == 'Account Error':
+            raise RuntimeError('Invalid Username/Password')
         return self.socket(text)[0]
 
     def apply_list(self, ilist):
