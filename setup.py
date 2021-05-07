@@ -16,10 +16,10 @@ import os
 import sys
 import warnings
 
-from distutils.version import StrictVersion
+from distutils.version import LooseVersion
 import setuptools
 
-assert StrictVersion(setuptools.__version__) >= StrictVersion('40.0'), \
+assert LooseVersion(setuptools.__version__) >= LooseVersion('40.0'), \
     'Please update setuptools to 40.0+ using `pip install -U setuptools`.'
 
 ################################################################################
