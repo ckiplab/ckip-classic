@@ -13,7 +13,7 @@ import time
 
 class CkipParserSocket:
 
-    def __init__(self, *, username, password, host='140.109.19.130', port=8005):
+    def __init__(self, *, username, password, host='140.109.20.151', port=9998):
 
         self.username = username
         self.password = password
