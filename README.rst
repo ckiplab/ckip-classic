@@ -74,6 +74,7 @@ Contributers
 ------------
 
 * `Mu Yang <https://muyang.pro>`__ at `CKIP <https://ckip.iis.sinica.edu.tw>`__ (Author & Maintainer)
+* `Yin-Hsiang Liao <zenonliao@iis.sinica.edu.tw>`__ at `CKIP <https://ckip.iis.sinica.edu.tw>`__ (Maintainer)
 * `Wei-Yun Ma <https://www.iis.sinica.edu.tw/pages/ma/>`__ at `CKIP <https://ckip.iis.sinica.edu.tw>`__ (Maintainer)
 
 External Links
