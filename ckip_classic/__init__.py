@@ -3,7 +3,7 @@
 
 __author_name__ = 'Mu Yang'
 __author_email__ = 'emfomy@gmail.com'
-__copyright__ = '2018-2020 CKIP Lab'
+__copyright__ = '2018-2023 CKIP Lab'
 
 __title__ = 'CkipClassic'
 __version__ = '1.2.3'
