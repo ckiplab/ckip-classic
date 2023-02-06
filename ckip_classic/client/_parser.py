@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 __author__ = 'Mu Yang <http://muyang.pro>'
-__copyright__ = '2018-2020 CKIP Lab'
+__copyright__ = '2018-2023 CKIP Lab'
 __license__ = 'GPL-3.0'
 
 import json
@@ -13,7 +13,7 @@ import time
 
 class CkipParserSocket:
 
-    def __init__(self, *, username, password, host='140.109.19.130', port=8005):
+    def __init__(self, *, username, password, host='140.109.20.151', port=9998):
 
         self.username = username
         self.password = password
